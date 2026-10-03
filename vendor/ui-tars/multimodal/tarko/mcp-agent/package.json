@@ -1,0 +1,43 @@
+{
+  "name": "@tarko/mcp-agent",
+  "version": "0.3.0",
+  "description": "An event-stream driven MCP Agent Framework for building effective multimodal Agents.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rslib build --watch",
+    "build": "rslib build",
+    "prepublishOnly": "pnpm run build",
+    "agent:snapshot:genreate": "npx tsx snapshot/runner.ts generate all",
+    "agent:snapshot:test": "npx vitest snapshot/index.test.ts"
+  },
+  "dependencies": {
+    "@tarko/agent": "workspace:*",
+    "@tarko/agent-snapshot": "workspace:*",
+    "@tarko/mcp-agent-interface": "workspace:*",
+    "@tarko/shared-utils": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "@agent-infra/mcp-client": "1.2.20",
+    "@agent-infra/logger": "0.0.2-beta.2"
+  },
+  "devDependencies": {
+    "@rslib/core": "0.10.0",
+    "@types/node": "22.15.30",
+    "typescript": "^5.5.3"
+  }
+}

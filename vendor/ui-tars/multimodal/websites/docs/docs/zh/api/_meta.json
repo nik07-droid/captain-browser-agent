@@ -1,0 +1,19 @@
+[
+   {
+    "type": "file",
+    "name": "index",
+    "label": "概览"
+  },
+  {
+    "type": "dir",
+    "name": "config",
+    "label": "配置"
+  },
+  {
+    "type": "dir",
+    "name": "runtime",
+    "label": "运行时",
+    "collapsible": false,
+    "collapsed": false
+  }
+]

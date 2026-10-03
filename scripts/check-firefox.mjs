@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+const root = new URL('..', import.meta.url);
+const manifest = JSON.parse(await readFile(new URL('dist/captain-firefox/manifest.json', root), 'utf8'));
+const worker = await readFile(new URL('dist/captain-firefox/service-worker.js', root), 'utf8');
+const content = await readFile(new URL('dist/captain-firefox/content-script.js', root), 'utf8');
+assert.equal(manifest.manifest_version, 3);
+assert.deepEqual(manifest.background, { scripts: ['service-worker.js'] });
+assert.equal(manifest.browser_specific_settings?.gecko?.id, 'captain@local.sih');
+assert.ok(!manifest.permissions.includes('debugger'), 'Firefox package must omit unsupported debugger permission');
+for (const permission of ['tabs', 'storage', 'scripting']) assert.ok(manifest.permissions.includes(permission));
+assert.match(worker, /captureVisibleTab/);
+assert.match(worker, /does not support the trusted coordinate-click fallback/);
+assert.match(content, /OBSERVE/);
+console.log(JSON.stringify({ passed: true, scope: 'static-only', liveFirefox: false, checks: ['manifest-v3', 'background-script', 'no-debugger-permission', 'capture-api-path', 'content-observer'] }, null, 2));

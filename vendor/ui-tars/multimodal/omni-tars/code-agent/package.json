@@ -1,0 +1,41 @@
+{
+  "name": "@omni-tars/code-agent",
+  "version": "0.3.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rslib build --watch",
+    "build": "rslib build",
+    "test": "vitest",
+    "dev:agent": "../../tarko/agent-cli/bin/cli.js run ./"
+  },
+  "dependencies": {
+    "@tarko/agent": "workspace:*",
+    "@omni-tars/core": "workspace:*",
+    "@tarko/agent-interface": "workspace:*",
+    "@agent-infra/sandbox": "0.0.6"
+  },
+  "devDependencies": {
+    "@rslib/core": "0.10.0",
+    "@types/node": "22.15.30",
+    "typescript": "^5.5.3",
+    "vitest": "^1.0.0",
+    "openai": "4.93.0"
+  }
+}

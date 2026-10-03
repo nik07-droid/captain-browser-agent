@@ -1,0 +1,411 @@
+---
+title: Agent Hooks
+description: 使用生命周期 Hook 扩展和自定义 Agent 行为
+---
+
+# Agent Hooks
+
+Tarko 的 **Agent Hooks** 系统在 Agent 生命周期的特定节点提供扩展点，允许你自定义行为、添加监控、实现自定义逻辑并与外部系统集成。
+
+## 概述
+
+Agent Hooks 是在 Agent 运行特定节点执行的回调方法。所有 Hook 都在 `Agent` 类中定义，可以在自定义 Agent 实现中重写：
+
+- **LLM Hooks**：请求/响应拦截和修改
+- **Tool Hooks**：工具调用执行生命周期管理
+- **Loop Hooks**：Agent 循环迭代控制和监控
+- **Termination Hooks**：自定义完成条件强制执行
+- **Request Preparation**：动态系统提示和工具修改
+
+## 核心 Hook
+
+### LLM 交互 Hook
+
+拦截和监控 LLM 请求和响应：
+
+```typescript
+import { Agent } from '@tarko/agent';
+
+class MonitoringAgent extends Agent {
+  // 在每个 LLM 请求之前调用
+  override async onLLMRequest(id: string, payload: LLMRequestHookPayload) {
+    console.log(`[${id}] 发送请求到 ${payload.model}`);
+    console.log('Messages count:', payload.messages.length);
+    
+    // 记录 token 使用估算
+    const tokenEstimate = this.estimateTokens(payload.messages);
+    console.log('Estimated tokens:', tokenEstimate);
+  }
+  
+  // 在每个 LLM 响应之后调用
+  override async onLLMResponse(id: string, payload: LLMResponseHookPayload) {
+    const response = payload.response;
+    console.log(`[${id}] 收到响应:`);
+    console.log('Usage:', response.usage);
+    console.log('Finish reason:', response.choices[0]?.finish_reason);
+    
+    // 如果存在工具调用则记录
+    const toolCalls = response.choices[0]?.message?.tool_calls;
+    if (toolCalls?.length) {
+      console.log('Tool calls:', toolCalls.map(tc => tc.function.name));
+    }
+  }
+  
+  // 在流式响应期间调用
+  override onLLMStreamingResponse(id: string, payload: LLMStreamingResponseHookPayload) {
+    // 实时监控 streaming chunks
+    const chunks = payload.chunks;
+    console.log(`[${id}] 收到 ${chunks.length} 个 streaming chunks`);
+  }
+}
+```
+
+### 工具执行 Hooks
+
+监控和控制工具调用执行：
+
+```typescript
+class ToolMonitoringAgent extends Agent {
+  private toolUsageStats = new Map<string, number>();
+  
+  // 在每个工具执行之前调用
+  override async onBeforeToolCall(
+    id: string,
+    toolCall: { toolCallId: string; name: string },
+    args: any
+  ) {
+    console.log(`[${id}] Executing tool: ${toolCall.name}`);
+    console.log('Arguments:', JSON.stringify(args, null, 2));
+    
+    // 跟踪工具使用情况
+    const currentCount = this.toolUsageStats.get(toolCall.name) || 0;
+    this.toolUsageStats.set(toolCall.name, currentCount + 1);
+    
+    // 验证参数或应用速率限制
+    if (toolCall.name === 'expensive_api' && currentCount >= 5) {
+      throw new Error('Rate limit exceeded for expensive_api');
+    }
+    
+    // 返回可能修改的参数
+    return args;
+  }
+  
+  // 在每个工具执行之后调用
+  override async onAfterToolCall(
+    id: string,
+    toolCall: { toolCallId: string; name: string },
+    result: any
+  ) {
+    console.log(`[${id}] Tool ${toolCall.name} completed`);
+    console.log('Result type:', typeof result);
+    
+    // 记录错误或成功结果
+    if (result?.error) {
+      console.error('Tool execution failed:', result.error);
+    } else {
+      console.log('Tool execution successful');
+    }
+    
+    // 返回可能修改的结果
+    return result;
+  }
+  
+  // 当工具执行失败时调用
+  override async onToolCallError(
+    id: string,
+    toolCall: { toolCallId: string; name: string },
+    error: any
+  ) {
+    console.error(`[${id}] Tool ${toolCall.name} failed:`, error);
+    
+    // 实现重试逻辑或错误转换
+    if (error.message?.includes('timeout')) {
+      return 'Tool execution timed out. Please try again later.';
+    }
+    
+    return `Error: ${error.message || error}`;
+  }
+  
+  // 完全覆盖工具调用处理
+  override async onProcessToolCalls(
+    id: string,
+    toolCalls: ChatCompletionMessageToolCall[]
+  ) {
+    // 返回 undefined 正常执行工具
+    // 返回 ToolCallResult[] 跳过正常执行
+    
+    // 示例：测试时模拟工具执行
+    if (process.env.NODE_ENV === 'test') {
+      return toolCalls.map(tc => ({
+        toolCallId: tc.id,
+        result: `Mocked result for ${tc.function.name}`,
+        success: true
+      }));
+    }
+    
+    return undefined; // 正常执行工具
+  }
+}
+```
+
+### 循环生命周期 Hook
+
+控制 Agent 循环迭代和终止：
+
+```typescript
+class LoopControlAgent extends Agent {
+  private iterationStartTimes = new Map<string, number>();
+  
+  // 在每个循环迭代开始时调用
+  override async onEachAgentLoopStart(sessionId: string) {
+    this.iterationStartTimes.set(sessionId, Date.now());
+    console.log(`[${sessionId}] Starting iteration ${this.getCurrentLoopIteration()}`);
+    
+    // 注入额外上下文或执行设置
+    const currentTime = new Date().toISOString();
+    console.log(`Current time: ${currentTime}`);
+  }
+  
+  // 在每个循环迭代结束时调用
+  override async onEachAgentLoopEnd(context: EachAgentLoopEndContext) {
+    const startTime = this.iterationStartTimes.get(context.sessionId);
+    if (startTime) {
+      const duration = Date.now() - startTime;
+      console.log(`[${context.sessionId}] Iteration completed in ${duration}ms`);
+    }
+    
+    // 记录迭代结果
+    console.log('Events in this iteration:', context.events?.length || 0);
+    console.log('Tool calls made:', context.toolCallResults?.length || 0);
+  }
+  
+  // 当整个 Agent 循环结束时调用
+  override async onAgentLoopEnd(id: string) {
+    console.log(`[${id}] Agent loop completed`);
+    console.log('Total iterations:', this.getCurrentLoopIteration());
+    
+    // 清理迭代跟踪
+    this.iterationStartTimes.delete(id);
+    
+    // 调用父实现
+    await super.onAgentLoopEnd(id);
+  }
+}
+```
+
+## 高级 Hook 模式
+
+### 强制完成条件
+
+使用 `onBeforeLoopTermination` 强制执行特定的完成要求：
+
+```typescript
+class ValidatingAgent extends Agent {
+  private requiredToolsCalled = new Set<string>();
+  private requiredTools = ['gather_data', 'analyze_results', 'final_report'];
+  
+  constructor(options: AgentOptions) {
+    super({
+      ...options,
+      instructions: `${options.instructions || ''}
+
+你必须按顺序调用这些工具: gather_data, analyze_results, final_report。
+在所有必需的工具都被调用之前，不要提供最终答案。`,
+    });
+  }
+  
+  override async onAfterToolCall(
+    id: string,
+    toolCall: { toolCallId: string; name: string },
+    result: any
+  ) {
+    // 跟踪必需的工具调用
+    if (this.requiredTools.includes(toolCall.name)) {
+      this.requiredToolsCalled.add(toolCall.name);
+      console.log(`必需工具已调用: ${toolCall.name}`);
+      console.log('剩余:', this.requiredTools.filter(t => !this.requiredToolsCalled.has(t)));
+    }
+    
+    return await super.onAfterToolCall(id, toolCall, result);
+  }
+  
+  // 防止在所有必需工具调用之前终止
+  override async onBeforeLoopTermination(
+    id: string,
+    finalEvent: AgentEventStream.AssistantMessageEvent
+  ): Promise<LoopTerminationCheckResult> {
+    const missingTools = this.requiredTools.filter(tool => 
+      !this.requiredToolsCalled.has(tool)
+    );
+    
+    if (missingTools.length > 0) {
+      console.log(`[${id}] 阻止终止。缺少工具:`, missingTools);
+      
+      // 注入提醒消息
+      const reminderEvent = this.getEventStream().createEvent('user_message', {
+        content: `请在提供最终答案之前调用以下必需工具: ${missingTools.join(', ')}`
+      });
+      this.getEventStream().sendEvent(reminderEvent);
+      
+      return {
+        finished: false,
+        message: `必须调用必需工具: ${missingTools.join(', ')}`
+      };
+    }
+    
+    console.log(`[${id}] 所有必需工具已调用。允许终止。`);
+    return { finished: true };
+  }
+  
+  override async onAgentLoopEnd(id: string) {
+    // 为下次运行重置
+    this.requiredToolsCalled.clear();
+    await super.onAgentLoopEnd(id);
+  }
+}
+```
+
+### 动态请求准备
+
+使用 `onPrepareRequest` 动态修改系统提示和可用工具：
+
+```typescript
+class AdaptiveAgent extends Agent {
+  private userExpertiseLevel: 'beginner' | 'intermediate' | 'expert' = 'intermediate';
+  
+  override async onPrepareRequest(
+    context: PrepareRequestContext
+  ): Promise<PrepareRequestResult> {
+    // 根据上下文修改系统提示
+    let systemPrompt = context.systemPrompt;
+    
+    // 添加专业水平特定指令
+    switch (this.userExpertiseLevel) {
+      case 'beginner':
+        systemPrompt += '\n\n用简单的术语解释概念并提供逐步指导。';
+        break;
+      case 'expert':
+        systemPrompt += '\n\n提供技术细节并假设具有高级知识。';
+        break;
+    }
+    
+    // 根据迭代次数过滤工具
+    let availableTools = context.tools;
+    const iteration = this.getCurrentLoopIteration();
+    
+    if (iteration === 1) {
+      // 第一次迭代：只允许信息收集工具
+      availableTools = context.tools.filter(tool => 
+        tool.id.includes('search') || tool.id.includes('read')
+      );
+    } else if (iteration >= 5) {
+      // 后续迭代：添加分析和报告工具
+      availableTools = context.tools; // 所有工具可用
+    }
+    
+    console.log(`迭代 ${iteration}: ${availableTools.length} 个工具可用`);
+    
+    return {
+      systemPrompt,
+      tools: availableTools
+    };
+  }
+  
+  // 更新用户专业水平的方法
+  setUserExpertiseLevel(level: 'beginner' | 'intermediate' | 'expert') {
+    this.userExpertiseLevel = level;
+    console.log(`用户专业水平设置为: ${level}`);
+  }
+}
+```
+
+### 错误处理和恢复
+
+```typescript
+class ResilientAgent extends Agent {
+  private errorCounts = new Map<string, number>();
+  private maxRetries = 3;
+  
+  override async onToolCallError(
+    id: string,
+    toolCall: { toolCallId: string; name: string },
+    error: any
+  ) {
+    const errorKey = `${id}-${toolCall.name}`;
+    const currentCount = this.errorCounts.get(errorKey) || 0;
+    
+    console.error(`工具 ${toolCall.name} 失败 (尝试 ${currentCount + 1}):`, error);
+    
+    // 实现重试逻辑
+    if (currentCount < this.maxRetries && this.isRetriableError(error)) {
+      this.errorCounts.set(errorKey, currentCount + 1);
+      
+      // 重试前添加延迟
+      await new Promise(resolve => setTimeout(resolve, 1000 * (currentCount + 1)));
+      
+      console.log(`重试 ${toolCall.name} (尝试 ${currentCount + 2})`);
+      return '由于临时错误正在重试...';
+    }
+    
+    // 超过最大重试次数或不可重试错误
+    this.errorCounts.delete(errorKey);
+    return `工具 ${toolCall.name} 在 ${currentCount + 1} 次尝试后失败: ${error.message || error}`;
+  }
+  
+  private isRetriableError(error: any): boolean {
+    const errorMessage = error.message || error.toString();
+    return (
+      errorMessage.includes('timeout') ||
+      errorMessage.includes('network') ||
+      errorMessage.includes('503') ||
+      errorMessage.includes('502')
+    );
+  }
+  
+  override async onAgentLoopEnd(id: string) {
+    // 清除此会话的错误计数
+    for (const key of this.errorCounts.keys()) {
+      if (key.startsWith(id)) {
+        this.errorCounts.delete(key);
+      }
+    }
+    
+    await super.onAgentLoopEnd(id);
+  }
+}
+```
+
+## Hook 执行顺序
+
+了解 hook 执行序列对于正确实现至关重要：
+
+```
+1. Agent.run() 调用
+2. onEachAgentLoopStart() - 迭代开始
+3. onPrepareRequest() - 准备 LLM 请求
+4. onLLMRequest() - 发送到 LLM 之前
+5. onLLMResponse() / onLLMStreamingResponse() - LLM 响应之后
+6. [如果存在工具调用]
+   a. onProcessToolCalls() - 覆盖工具执行（可选）
+   b. 对于每个工具调用:
+      - onBeforeToolCall() - 工具执行之前
+      - [工具执行]
+      - onAfterToolCall() - 成功执行之后
+      - 或 onToolCallError() - 执行失败之后
+7. onEachAgentLoopEnd() - 迭代结束
+8. [如果最终答案准备就绪]
+   a. onBeforeLoopTermination() - 检查是否应该终止
+   b. [如果允许终止] onAgentLoopEnd() - Agent 循环结束
+9. [否则从步骤 2 重复]
+```
+
+
+## 实际示例
+
+WIP
+
+## 下一步
+
+- [Agent Protocol](/guide/advanced/agent-protocol) - 了解 Hook 中的事件处理
+- [工具管理](/guide/basic/tools) - 学习工具注册和执行
+- [上下文工程](/guide/advanced/context-engineering) - 高级上下文管理

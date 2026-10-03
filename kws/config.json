@@ -1,0 +1,26 @@
+{
+  "keyword": "hey captain",
+  "labels": ["silence", "unknown", "hey_captain"],
+  "sampleRateHz": 16000,
+  "clipMs": 1000,
+  "windowMs": 30,
+  "strideMs": 20,
+  "featureBins": 40,
+  "detection": {
+    "threshold": 0.82,
+    "consecutiveWindows": 2,
+    "cooldownMs": 1800,
+    "preRollMs": 300
+  },
+  "budgets": {
+    "modelBytes": 32768,
+    "totalRamBytes": 262143,
+    "idleCpuPercent": 9.99,
+    "keywordToFirstAudioMs": 250
+  },
+  "stream": {
+    "format": "pcm_s16le",
+    "frameMs": 20,
+    "channels": 1
+  }
+}

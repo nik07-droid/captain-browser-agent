@@ -1,0 +1,37 @@
+[
+  {
+    "toolCallId": "call_1749894998174_k97il",
+    "name": "web-search",
+    "args": {
+      "query": "ByteDance 主要开源项目 应用场景",
+      "count": 3,
+      "engine": "google"
+    },
+    "result": {
+      "query": "ByteDance 主要开源项目 应用场景",
+      "engine": "google",
+      "totalResults": 3,
+      "results": [
+        {
+          "index": 1,
+          "title": "",
+          "url": "https://zhuanlan.zhihu.com/p/546857592",
+          "content": "知乎，让每一次点击都充满意义 —— 欢迎来到知乎，发现问题背后的世界。"
+        },
+        {
+          "index": 2,
+          "title": "ByteDance开放源代码深度研究框架DeerFlow_字节_Arxiv_内容",
+          "url": "https://www.sohu.com/a/893655206_122396381",
+          "content": "JS加载错误，请重新加载。刷新"
+        },
+        {
+          "index": 3,
+          "title": "",
+          "url": "https://zhuanlan.zhihu.com/p/1904122161762907608",
+          "content": "知乎，让每一次点击都充满意义 —— 欢迎来到知乎，发现问题背后的世界。"
+        }
+      ]
+    },
+    "executionTime": 7444
+  }
+]

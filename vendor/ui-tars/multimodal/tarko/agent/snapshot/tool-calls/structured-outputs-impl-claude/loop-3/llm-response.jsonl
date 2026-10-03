@@ -1,0 +1,30 @@
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276122,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"role":"assistant"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276122,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"{"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276122,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"\n  \"content"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276122,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"\": \"In"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276122,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" Boston today"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276122,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":", it"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276122,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"'s"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276122,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" sunny with a temperature"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276122,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" of 70°"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"F (21°"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"C). There"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"'s low"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" precipitation"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" chance"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" (10%),"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" humidity"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" is"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" at"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" 45%, an"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"d light"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" winds at"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" 5 mph"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"."},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" Overall"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":", it's"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" a nice day!\""},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"\n}"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{},"index":0,"finish_reason":"stop","stop_reason":"end_turn"}],"usage":{}}
+{"id":"20250919180201CD2C1384A53FF91DB222","created":1758276123,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{},"index":0,"stop_reason":""}],"usage":{"completion_tokens":63,"prompt_tokens":491,"total_tokens":554}}

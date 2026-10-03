@@ -1,0 +1,1 @@
+{"website":"amazon","category":"ecommerce","task":"Open Amazon and find the cheapest laptop under ₹50,000","constraints":{"readOnly":true,"maxPrice":50000,"forbid":["login","cart","checkout","purchase"]},"startingURL":"about:blank","expectedOutcome":"verified-product","verification":{"hosts":["amazon.in"],"pathPattern":"/(dp|gp/product)/[A-Z0-9]{10}"}}

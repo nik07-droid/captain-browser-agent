@@ -1,0 +1,11 @@
+.env
+node_modules/
+coverage/
+runtime/
+*.log
+__pycache__/
+*.pyc
+kws/dataset/
+kws/artifacts/
+.DS_Store
+vendor/ui-tars/node_modules/

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "3165d8e2-db19-4850-93f7-88eb3304bf46",
+    "type": "user_message",
+    "timestamp": 1758276103049,
+    "content": "How's the weather today?"
+  },
+  {
+    "id": "316eedb5-1520-47d3-8a98-54eced21cd06",
+    "type": "agent_run_start",
+    "timestamp": 1758276103049,
+    "sessionId": "1758276103049-d6o4kd7",
+    "runOptions": {
+      "input": "How's the weather today?"
+    },
+    "provider": "volcengine",
+    "model": "doubao-seed-1-6-vision-250815",
+    "agentName": "Anonymous"
+  }
+]

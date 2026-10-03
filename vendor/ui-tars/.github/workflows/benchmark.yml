@@ -1,0 +1,55 @@
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - '**'
+    paths:
+      - 'packages/agent-infra/mcp-*/**'
+      - '.github/workflows/benchmark.yml'
+
+permissions:
+  id-token: write
+  contents: read
+  attestations: read
+
+name: Benchmark
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-test
+  cancel-in-progress: true
+env:
+  CI: true
+  NODE_OPTIONS: --max-old-space-size=8192
+  HUSKY: 0
+
+jobs:
+  mcp_benchmark:
+    name: Benchmark
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+
+      - name: Cache turbo
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306  # v5.0.3
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+
+      - name: Install pnpm
+        run: npm install -g pnpm@9
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238  # v6.2.0
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install Python dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          pip3 install --upgrade pip
+          pip3 install uv
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run MCP benchmark
+        run: cd packages/agent-infra/mcp-benchmark && pnpm run benchmark

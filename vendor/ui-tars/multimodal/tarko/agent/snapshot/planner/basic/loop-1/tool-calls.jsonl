@@ -1,0 +1,37 @@
+[
+  {
+    "toolCallId": "call_1749894954760_7q3bz",
+    "name": "web-search",
+    "args": {
+      "query": "ByteDance 主要开源项目 贡献者 应用场景",
+      "count": 3,
+      "engine": "google"
+    },
+    "result": {
+      "query": "ByteDance 主要开源项目 贡献者 应用场景",
+      "engine": "google",
+      "totalResults": 3,
+      "results": [
+        {
+          "index": 1,
+          "title": "字节跳动在GitHub上有哪些开源项目_字节开源项目-CSDN博客",
+          "url": "https://blog.csdn.net/interpromotion/article/details/147456150",
+          "content": "[程序员差不多先生](https://blog.csdn.net/interpromotion \"程序员差不多先生\") 于 2025-04-23 15:44:05 发布\n\n版权声明：本文为博主原创文章，遵循 [CC 4.0 BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) 版权协议，转载请附上原文出处链接和本声明。\n\n字节跳动（ByteDance）在GitHub上开源了许多项目，涵盖前端、后端、云原生、AI、数据库等多个领域。以下是一些典型项目及其简介：\n\n* * *\n\n#### **1\\. 前端 & 跨平台开发**\n\n*   **Hippy**\n    \n    *   **仓库**: [Tencent/Hippy](https://github.com/Tencent/Hippy)（注：Hippy 最初由腾讯开源，但字节跳动内部有深度定制和扩展版本）\n    *   **简介**: 高性能跨端开发框架，支持 React/Vue 语法，广泛用于抖音、今日头条等 App 内嵌页面。\n*   **IconPark**\n    \n    *   **仓库**: [bytedance/IconPark](https://github.com/bytedance/IconPark)\n    *   **简介**: 开源图标库，提供超过 2,000 个高质量图标，支持按需定制颜色、大小、线条风格等。\n*   **Semi Design**\n    \n    *   **仓库**: [DouyinFE/semi-design](https://github.com/DouyinFE/semi-design)\n    *   **简介**: 抖音前端团队开源的现代企业级 UI 设计系统，支持 React 组件库与设计工具集成。\n\n* * *\n\n#### **2\\. 云原生 & 微服务**\n\n*   **CloudWeGo**\n    \n    *   **仓库**: [cloudwego](https://github.com/cloudwego)\n    *   **简介**: 字节跳动开源的云原生微服务生态，核心项目包括：\n        *   **Kitex**: 高性能 RPC 框架（Golang）。\n    ...(content trimmed)"
+        },
+        {
+          "index": 2,
+          "title": "",
+          "url": "https://zhuanlan.zhihu.com/p/546857592",
+          "content": "知乎，让每一次点击都充满意义 —— 欢迎来到知乎，发现问题背后的世界。"
+        },
+        {
+          "index": 3,
+          "title": "ByteDance Seed研究团队发布BAGEL：探索统一多模态预训练中的涌现能力 - 科技行者",
+          "url": "https://www.techwalker.com/2025/0526/3166727.shtml",
+          "content": "ByteDance Seed团队发布的BAGEL是一个突破性开源基础模型，采用混合变换器专家架构，能同时执行多模态理解和生成任务。研究显示，随着训练数据和模型规模增加，BAGEL展现\"涌现能力\"—从基础理解和生成，到复杂编辑和自由形式视觉操作，再到长上下文推理，呈现能力阶梯式提升。模型在标准基准测试中超越现有开源统一模型，并显示出强大的世界建模能力，如世界导航和视频生成。研究团队开源了代码和模型检查点，为多模态AI研究开辟新方向。\n\n在人工智能研究领域，2025年迎来了一项重要突破。由ByteDance Seed团队主导的研究成果《Emerging Properties in Unified Multimodal Pretraining》（统一多模态预训练中的涌现能力）于2025年5月20日发表在arXiv预印本平台（arXiv:2505.14683v1），向公众展示了他们开发的强大开源基础模型BAGEL（Scalable Generative Cognitive Model）。这项研究由多位杰出研究者共同完成，包括Chaorui Deng、Deyao Zhu、Kunchang Li、Chenhui Gou、Feng Li、Zeyu Wang等首要贡献者，以及由Haoqi Fan担任项目负责人。研究团队来自ByteDance Seed、深圳先进技术研究院、莫纳什大学、香港科技大学和加州大学圣克鲁兹分校等多家研究机构。有兴趣深入了解的读者可以通过项目官网https://bagel-ai.org/获取更多信息。\n\n想象一下，如果我们把传统的AI模型比作专业厨师，那么他们通常只擅长一种菜系——有些只会做中餐，有些只会做西餐。而现在，ByteDance的研究团队打造了一位全能大厨BAGEL，不仅能同时精通多种菜系，还能在烹饪过程中展现出令人惊讶的创新能力，比如根据客人的简单描述创造出全新的菜品，或者仅凭一张食物图片就能复制出相同的美味。\n\n什么是BAGEL？简单来说，它是一个能够同时理解和生成多种模态（如文本、图像、视频）内容的AI模型。与市面上那些要么专注于理解（比如识别图片中的物体），要么专注于生成（比如根据文字描述创建图像）的模型不同，BAGEL就像是一个既能听懂你说话，又能用绘画、写作等多种方式回应你的全能伙伴。\n\n这项研究最令人兴奋的发现是\"涌现能力\"（Emerg...(content trimmed)"
+        }
+      ]
+    },
+    "executionTime": 6942
+  }
+]

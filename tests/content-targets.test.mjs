@@ -1,0 +1,20 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+import { readFile } from 'node:fs/promises';
+const code = await readFile(new URL('../extension/content-script.js', import.meta.url), 'utf8');
+test('actions use the latest observed element, never a stale duplicate DOM ref', async () => {
+  let listener, nodes = [], clicks = [];
+  const control = name => ({ tagName: 'BUTTON', innerText: name, dataset: {}, isConnected: true, getAttribute: () => '', getBoundingClientRect: () => ({ width: 100, height: 50, top: 0, left: 0, right: 100, bottom: 50 }), closest: () => null, scrollIntoView() {}, click() { clicks.push(name); } });
+  const host = { shadowRoot: { querySelector: () => null } };
+  const sandbox = { URL, innerWidth: 1000, innerHeight: 800, devicePixelRatio: 1, getComputedStyle: () => ({ visibility: 'visible', display: 'block' }), location: { href: 'https://example.com', origin: 'https://example.com', hostname: 'example.com', pathname: '/' }, document: { images: [], title: 'Example', body: { innerText: '' }, querySelector: () => host, querySelectorAll: selector => selector === 'video,audio' ? [] : nodes }, chrome: { runtime: { onMessage: { addListener(fn) { listener = fn; } } } } };
+  vm.runInNewContext(code, sandbox);
+  const send = message => new Promise(resolve => listener(message, {}, resolve));
+  const stale = control('old recommendation'); nodes = [stale]; await send({ type: 'OBSERVE' });
+  const fresh = control('requested search result'); nodes = [fresh]; await send({ type: 'OBSERVE' });
+  assert.equal(stale.dataset.captainRef, fresh.dataset.captainRef);
+  await send({ type: 'EXECUTE', action: { type: 'click', target: { ref: 'c1' } } });
+  assert.deepEqual(clicks, ['requested search result']);
+  fresh.isConnected = false;
+  assert.equal((await send({ type: 'EXECUTE', action: { type: 'click', target: { ref: 'c1' } } })).ok, false);
+});

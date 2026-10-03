@@ -1,0 +1,1115 @@
+[
+  {
+    "id": "03b3d6b1-5618-4e83-b055-58d044c79af4",
+    "type": "user_message",
+    "timestamp": 1758276553575,
+    "content": "How's the weather today?"
+  },
+  {
+    "id": "3a9bf907-37de-4d8a-b624-ae52750d91eb",
+    "type": "agent_run_start",
+    "timestamp": 1758276553575,
+    "sessionId": "1758276553575-4qf51dg",
+    "runOptions": {
+      "input": "How's the weather today?",
+      "stream": true
+    },
+    "provider": "volcengine",
+    "model": "doubao-seed-1-6-vision-250815",
+    "agentName": "Anonymous"
+  },
+  {
+    "id": "29c07e69-8785-4ddd-98f6-298b720f4592",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": "To",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "7ffaa2e7-680d-48dc-8259-481e38fe7a85",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " determine",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "20953161-b6fb-4993-ac63-cc1d70c78907",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " the",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "c5d1530c-e9c8-4a1b-ac8a-dd17cdab876b",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " weather",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "394c473a-daf5-4688-b1d1-0aece247c493",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " today",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "4b50df22-1480-440b-85f9-adea52b481c1",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": ",",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "61fa0984-89da-404b-8bcf-8f67443d3c6d",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " we",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "7f3a0597-ad95-4d77-b3a6-f0195a497cf7",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " first",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "db6224fc-6481-4997-8253-1523cc5939e2",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " need",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "23643970-5d78-4af3-bd53-90416f2464db",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " to",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "959acdac-8eb5-43a4-bb22-2c257bf30a6d",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " know",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "fa5b9677-b3d6-47ee-89eb-1b0fab098348",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " the",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "51ea2b15-46fc-4bc1-b6bb-ee8e00c2fae4",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " user",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "ec53d562-7c7b-41a9-914b-f91b700ee763",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": "'s",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "46fd8111-ce5e-4760-ae17-64b67162c62e",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " current",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "9b78e081-9e75-41b3-8a60-d22d9dd5b7cd",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " location",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "23ff4c55-6183-45f8-8ba8-288ce0f7d9cf",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": ".",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "6e4b9b24-0e16-41bb-8543-545d1fbc349c",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " So",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "18dece70-4c71-4ca0-b73f-98f2dbe17ecd",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " we",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "7651cbcf-ff5c-448e-b6ff-cb548e221307",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " will",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "9ed809d0-58a8-4461-808a-e1b5fc1ad8e4",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " call",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "cf6f06a6-4de4-412e-8505-8e610f98261f",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " the",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "6da14833-7ab6-4ab8-9c50-ee684517e2a6",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " `",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "712f5e99-8480-4753-a56a-056ed50324ee",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": "get",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "c78b72c7-189f-4d4d-8500-a825842da5de",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": "Current",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "11f41acf-8a3c-4928-8290-92ea50b876ed",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": "Location",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "14b29542-d036-4e41-b9fa-488426dd4d21",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": "`",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "87a5d0c9-74e2-4444-aebc-7cceafca417e",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " tool",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "509df0ba-12c3-4782-b8e3-d5854dd57cfb",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " to",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "8ef36b9b-1700-45e6-80a9-20f795a3da46",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " obtain",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "d58cc33b-b790-48ad-9416-0f4bacb9f7df",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " the",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "9275f7d7-aecc-4003-bf6d-adaf2e8e671f",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " location",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "f7d508f9-f9e1-445a-a498-2a0efd93ee03",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": " information",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "6b2de5f9-a3e2-45cf-8ef2-c7f61ca19775",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": ".",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "30751cc8-af6a-4f27-ac8a-b817d96e37c3",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553576,
+    "content": "\n",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "47850f28-47b1-40b1-a8d6-303cd2719d06",
+    "type": "assistant_streaming_tool_call",
+    "timestamp": 1758276553576,
+    "toolCallId": "call_qq3gl3rl39z4155fol7riqge",
+    "toolName": "getCurrentLocation",
+    "arguments": "",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "201bb177-f601-4026-ae89-81643c9687c3",
+    "type": "assistant_streaming_tool_call",
+    "timestamp": 1758276553576,
+    "toolCallId": "call_qq3gl3rl39z4155fol7riqge",
+    "toolName": "getCurrentLocation",
+    "arguments": " {",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "367269d7-3ce4-4395-96f0-637f78f83cec",
+    "type": "assistant_streaming_tool_call",
+    "timestamp": 1758276553576,
+    "toolCallId": "call_qq3gl3rl39z4155fol7riqge",
+    "toolName": "getCurrentLocation",
+    "arguments": "}",
+    "isComplete": false,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "1b30faa9-e290-48bd-938e-df4df30fa938",
+    "type": "assistant_streaming_tool_call",
+    "timestamp": 1758276553576,
+    "toolCallId": "call_qq3gl3rl39z4155fol7riqge",
+    "toolName": "getCurrentLocation",
+    "arguments": "",
+    "isComplete": true,
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "3b7953d6-9e52-408d-996c-7959353be3d5",
+    "type": "assistant_message",
+    "timestamp": 1758276553576,
+    "content": "To determine the weather today, we first need to know the user's current location. So we will call the `getCurrentLocation` tool to obtain the location information.\n",
+    "rawContent": "",
+    "toolCalls": [
+      {
+        "id": "call_qq3gl3rl39z4155fol7riqge",
+        "type": "function",
+        "function": {
+          "name": "getCurrentLocation",
+          "arguments": " {}"
+        }
+      }
+    ],
+    "finishReason": "tool_calls",
+    "messageId": "msg_1758276553576_xgbus4u6"
+  },
+  {
+    "id": "c7b14792-266a-4a2f-a10b-8abbdd4ee0d6",
+    "type": "tool_call",
+    "timestamp": 1758276553577,
+    "toolCallId": "call_qq3gl3rl39z4155fol7riqge",
+    "name": "getCurrentLocation",
+    "arguments": {},
+    "startTime": 1758276553577,
+    "tool": {
+      "name": "getCurrentLocation",
+      "description": "Get user's current location",
+      "schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "id": "621a6af5-631d-451d-b998-82d3427860c2",
+    "type": "tool_result",
+    "timestamp": 1758276553577,
+    "toolCallId": "call_qq3gl3rl39z4155fol7riqge",
+    "name": "getCurrentLocation",
+    "content": {
+      "location": "Boston"
+    },
+    "elapsedMs": 0
+  },
+  {
+    "id": "25452b69-c01f-4c18-97dc-1fe62c74074b",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": "Now",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "b16f707c-8968-4673-99a6-6c4cfcc4e422",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " that",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "a763b061-2125-4d4c-812a-dcf8b1651288",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " we",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "62b5ed7d-5658-4d20-a495-b39e2a44235c",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " have",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "d0f8f6d2-82e5-450a-b37a-d0f7b4c3de36",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " the",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "39f5bd3d-73b1-409d-9fa4-9c4a430a98a0",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " location",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "325ebaee-9c6b-4336-adc6-4f9ea27866e7",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " as",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "de5a266f-2a25-4d57-94e1-1ea005823a98",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " Boston",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "fbf3d095-3017-497c-8daa-4825cde09389",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": ",",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "4761d2f8-539d-4ec2-b8d8-09a1ea95b0fe",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " we",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "226e7f89-04dd-4a4f-b45d-be83b8b539f1",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " can",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "d7f41212-c4e9-4f41-9e77-33aadbda2c5e",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " call",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "b9f45804-87cc-4422-ae53-fccca691276c",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " the",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "01c31946-00a4-4f8b-a6bd-18b73ce02fa1",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " `",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "553148a4-33e0-4ad2-ac39-fad2ed13b0b0",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": "get",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "67c592c3-0d40-4278-88b3-e387103b21bd",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": "Weather",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "b2bca62a-d410-44c9-a480-eb5d24d640ae",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": "`",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "6c13bde3-6186-40a7-96de-72f9869ad517",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " tool",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "64d313d3-77bc-4eb0-8482-d2cc8da871be",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " to",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "682d61a8-502d-4ef7-b9af-33f933472cdb",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " get",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "1fba746a-bd38-49b1-8660-24f17b87c124",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " the",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "0b65430a-d963-4a6b-860b-e8560d54b016",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " weather",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "6e71a0b3-2ed1-4789-864b-5764478c3202",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " information",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "3f69b6f3-14bd-4f2e-b57e-d0d19f424c91",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " for",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "bc3acc56-1dd9-4f5c-9d42-76d8574c52a1",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " Boston",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "21eae152-6a26-4c3e-91ec-8fa11ddaff6f",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": " today",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "644a2a0e-48ab-4c00-9cad-90d97a2e78ac",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": ".",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "474829ed-a8bf-4e6a-ba8b-db40d682292c",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553578,
+    "content": "\n",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "886d7531-3ea9-424d-9ca8-624647f614b7",
+    "type": "assistant_streaming_tool_call",
+    "timestamp": 1758276553578,
+    "toolCallId": "call_12d8kh2d4b0thhm0wnzqfh4u",
+    "toolName": "getWeather",
+    "arguments": "",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "c23f8842-0a04-49a2-ad0d-28b95f77d5c0",
+    "type": "assistant_streaming_tool_call",
+    "timestamp": 1758276553578,
+    "toolCallId": "call_12d8kh2d4b0thhm0wnzqfh4u",
+    "toolName": "getWeather",
+    "arguments": " {\"",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "9cee036f-0ece-43f0-9ec1-4cea5e991b32",
+    "type": "assistant_streaming_tool_call",
+    "timestamp": 1758276553578,
+    "toolCallId": "call_12d8kh2d4b0thhm0wnzqfh4u",
+    "toolName": "getWeather",
+    "arguments": "location",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "8c90b24a-c0d9-44d2-b7dd-43c5e0df0fcd",
+    "type": "assistant_streaming_tool_call",
+    "timestamp": 1758276553578,
+    "toolCallId": "call_12d8kh2d4b0thhm0wnzqfh4u",
+    "toolName": "getWeather",
+    "arguments": "\":",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "0093d4c5-4266-4df1-86ee-98a9503f0713",
+    "type": "assistant_streaming_tool_call",
+    "timestamp": 1758276553578,
+    "toolCallId": "call_12d8kh2d4b0thhm0wnzqfh4u",
+    "toolName": "getWeather",
+    "arguments": " \"",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "40740864-49cd-499c-abea-1af9b67dccb7",
+    "type": "assistant_streaming_tool_call",
+    "timestamp": 1758276553578,
+    "toolCallId": "call_12d8kh2d4b0thhm0wnzqfh4u",
+    "toolName": "getWeather",
+    "arguments": "Boston",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "aec2e1c8-fb0b-4eaf-881e-4b3085ff7d6f",
+    "type": "assistant_streaming_tool_call",
+    "timestamp": 1758276553578,
+    "toolCallId": "call_12d8kh2d4b0thhm0wnzqfh4u",
+    "toolName": "getWeather",
+    "arguments": "\"}",
+    "isComplete": false,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "55103a5e-4382-4f21-a95d-9fec9d66f990",
+    "type": "assistant_streaming_tool_call",
+    "timestamp": 1758276553578,
+    "toolCallId": "call_12d8kh2d4b0thhm0wnzqfh4u",
+    "toolName": "getWeather",
+    "arguments": "",
+    "isComplete": true,
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "583bc1df-859e-4f7d-99a4-0afffbd8c115",
+    "type": "assistant_message",
+    "timestamp": 1758276553578,
+    "content": "Now that we have the location as Boston, we can call the `getWeather` tool to get the weather information for Boston today.\n",
+    "rawContent": "",
+    "toolCalls": [
+      {
+        "id": "call_12d8kh2d4b0thhm0wnzqfh4u",
+        "type": "function",
+        "function": {
+          "name": "getWeather",
+          "arguments": " {\"location\": \"Boston\"}"
+        }
+      }
+    ],
+    "finishReason": "tool_calls",
+    "messageId": "msg_1758276553578_1dlcn957"
+  },
+  {
+    "id": "37ddebaa-cf0a-4484-b665-b5b2d6592085",
+    "type": "tool_call",
+    "timestamp": 1758276553579,
+    "toolCallId": "call_12d8kh2d4b0thhm0wnzqfh4u",
+    "name": "getWeather",
+    "arguments": {
+      "location": "Boston"
+    },
+    "startTime": 1758276553579,
+    "tool": {
+      "name": "getWeather",
+      "description": "Get weather information for a specified location",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "Location name, such as city name"
+          }
+        },
+        "required": [
+          "location"
+        ]
+      }
+    }
+  },
+  {
+    "id": "67c4d63d-df63-43d6-92f7-e57c52c65c2d",
+    "type": "tool_result",
+    "timestamp": 1758276553579,
+    "toolCallId": "call_12d8kh2d4b0thhm0wnzqfh4u",
+    "name": "getWeather",
+    "content": {
+      "location": "Boston",
+      "temperature": "70°F (21°C)",
+      "condition": "Sunny",
+      "precipitation": "10%",
+      "humidity": "45%",
+      "wind": "5 mph"
+    },
+    "elapsedMs": 0
+  },
+  {
+    "id": "8cf4607f-891f-4e0b-b016-81631b9b2041",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": "Today",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "491e2a4d-9e7e-4efe-b3a7-c43e1696b472",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " in",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "36f00b2d-8594-42c2-aa60-7d7c46d422af",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " Boston",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "51c381d0-9624-4b9d-aab6-804a5bb59132",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": ",",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "e6064867-e874-48da-bdd3-4b70d646ae0c",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " the",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "d5f0fab3-92ad-4d1d-8d17-73acfb160d83",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " weather",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "db45608a-9d6e-4f2e-a6e8-74f85c181f86",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " is",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "7b8f03fc-b3b7-4822-9871-4bed6d4d9ce7",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " sunny",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "1242de7e-1c58-4d0c-935f-45bd4c19cafc",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " with",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "9af85160-5381-4bac-9450-95c82b27d891",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " a",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "1055a536-cdcf-4df7-bf26-b27ac1481eee",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " temperature",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "59369ad3-1921-45bc-9269-539492c1cdbe",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " of",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "b3d99735-1e0a-4870-9f5a-ec5f11867b02",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " ",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "76ce10ed-3a1e-45ff-8e4f-09b20879a255",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": "7",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "321b8dc7-b3bf-4cac-98cb-b6ef8772a08c",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": "0",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "b1c3fa73-7ee0-4702-bd15-8389728536e4",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": "°F",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "c9196ff3-033b-420e-8ae7-3f5f6d099568",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " (",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "ab1701bf-f0c5-467f-9a56-27a8f0c8349e",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": "2",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "5d66ee0f-4fe7-430c-8668-c8d7efe4433d",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": "1",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "ddeec948-9cd5-493e-91b9-3b2a196c3960",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": "°C",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "fe4b56a4-3202-4e5a-91f6-9a1e0d254e25",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": ").",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "4d28ea73-5af9-4819-88a0-7f311777dff0",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " The",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "d07b6a68-20c6-4f89-a925-0c405866bf4d",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553580,
+    "content": " precipitation",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "cda36d50-fed1-409a-8775-1ef3d1df6df8",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " chance",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "51f1891d-68df-400b-9f77-95fae8e7b032",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " is",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "2f57ee0a-3262-46e2-977d-a34bc50cebad",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " ",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "cbcce6d4-51ab-496a-b130-418b09f949ee",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": "1",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "811d586a-491c-4587-bdb5-e9eb484f85cc",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": "0",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "8920860e-79ea-4678-93e9-4576c3f3da75",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": "%,",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "c504f8c9-1381-4e9f-a960-8231dcd54c70",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " humidity",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "f8bb9612-01c4-4c07-939c-e5f38353ffeb",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " is",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "df5d2165-bbe7-4318-b408-637b7b060bcf",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " ",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "5f547e2c-9140-4cd6-ba3d-326b9285cbeb",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": "4",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "070bce8c-972b-4734-ba37-0d90cad3b731",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": "5",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "4ffa7bc9-fac6-40c9-b103-e7670bbc588b",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": "%,",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "135c292a-2443-43be-a177-66b66a5f9fb0",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " and",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "281b3c89-2cfe-439f-917a-d8a212553b3e",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " the",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "2c93807a-38de-4654-804c-d6bdd11bf423",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " wind",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "d291e728-5e5e-4031-b77f-1a9af9e9829c",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " speed",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "76cdefdb-90bd-4fac-b3e3-f464f01592ea",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " is",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "f6633898-f36e-44d1-a26f-a8c6e5ef89eb",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " ",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "98511407-b671-457f-9fae-23fb50996d3b",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": "5",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "2ec202e4-b9af-4082-9ded-dea94336dad9",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": " mph",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "6023ab16-c604-435a-b1e6-ed2410127eb2",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276553581,
+    "content": ".",
+    "isComplete": false,
+    "messageId": "msg_1758276553580_q6tqffxf"
+  },
+  {
+    "id": "a5ae9c94-52a8-4b6f-ab40-5423fe063335",
+    "type": "assistant_message",
+    "timestamp": 1758276553581,
+    "content": "Today in Boston, the weather is sunny with a temperature of 70°F (21°C). The precipitation chance is 10%, humidity is 45%, and the wind speed is 5 mph.",
+    "rawContent": "",
+    "finishReason": "stop",
+    "messageId": "msg_1758276553580_q6tqffxf"
+  }
+]

@@ -1,0 +1,138 @@
+[
+  {
+    "id": "3e2f5f8a-a253-46e4-9aef-3e74346945b4",
+    "type": "user_message",
+    "timestamp": 1758276553565,
+    "content": "How's the weather today?"
+  },
+  {
+    "id": "05a54ccd-7006-4451-8863-4f70ba4adbec",
+    "type": "agent_run_start",
+    "timestamp": 1758276553565,
+    "sessionId": "1758276553565-uykf4hv",
+    "runOptions": {
+      "input": "How's the weather today?"
+    },
+    "provider": "azure-openai",
+    "model": "aws_sdk_claude37_sonnet",
+    "agentName": "Anonymous"
+  },
+  {
+    "id": "555de07d-817b-4c17-83c9-16d25e72e4fc",
+    "type": "assistant_message",
+    "timestamp": 1758276553566,
+    "content": "I'll check the weather for your current location.",
+    "rawContent": "I'll check the weather for your current location.",
+    "toolCalls": [
+      {
+        "id": "call_1758276553566_pb3jd",
+        "type": "function",
+        "function": {
+          "name": "getCurrentLocation",
+          "arguments": "{}"
+        }
+      }
+    ],
+    "finishReason": "tool_calls",
+    "messageId": "msg_1758276553566_bx8ggx20"
+  },
+  {
+    "id": "cce71fcd-a303-44fb-97ee-432c70478be4",
+    "type": "tool_call",
+    "timestamp": 1758276553566,
+    "toolCallId": "call_1758276553566_pb3jd",
+    "name": "getCurrentLocation",
+    "arguments": {},
+    "startTime": 1758276553566,
+    "tool": {
+      "name": "getCurrentLocation",
+      "description": "Get user's current location",
+      "schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "id": "1b6f060f-6388-4db3-ae95-f2c56ea0b7b0",
+    "type": "tool_result",
+    "timestamp": 1758276553567,
+    "toolCallId": "call_1758276553566_pb3jd",
+    "name": "getCurrentLocation",
+    "content": {
+      "location": "Boston"
+    },
+    "elapsedMs": 0
+  },
+  {
+    "id": "5517a973-fc73-49c2-97be-3f73fce5ad19",
+    "type": "assistant_message",
+    "timestamp": 1758276553568,
+    "content": "I'll check the current weather in Boston for you.",
+    "rawContent": "I'll check the current weather in Boston for you.",
+    "toolCalls": [
+      {
+        "id": "call_1758276553568_odgxk",
+        "type": "function",
+        "function": {
+          "name": "getWeather",
+          "arguments": "{\"location\":\"Boston\"}"
+        }
+      }
+    ],
+    "finishReason": "tool_calls",
+    "messageId": "msg_1758276553567_2hgrq4oy"
+  },
+  {
+    "id": "a049204b-30d5-47b9-ae76-5f6b5bbccc51",
+    "type": "tool_call",
+    "timestamp": 1758276553568,
+    "toolCallId": "call_1758276553568_odgxk",
+    "name": "getWeather",
+    "arguments": {
+      "location": "Boston"
+    },
+    "startTime": 1758276553568,
+    "tool": {
+      "name": "getWeather",
+      "description": "Get weather information for a specified location",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "Location name, such as city name"
+          }
+        },
+        "required": [
+          "location"
+        ]
+      }
+    }
+  },
+  {
+    "id": "51e707cd-d03e-4fef-8e6c-64a8b251fda4",
+    "type": "tool_result",
+    "timestamp": 1758276553568,
+    "toolCallId": "call_1758276553568_odgxk",
+    "name": "getWeather",
+    "content": {
+      "location": "Boston",
+      "temperature": "70°F (21°C)",
+      "condition": "Sunny",
+      "precipitation": "10%",
+      "humidity": "45%",
+      "wind": "5 mph"
+    },
+    "elapsedMs": 0
+  },
+  {
+    "id": "a1a62170-d50d-4de3-afff-43214b06379f",
+    "type": "assistant_message",
+    "timestamp": 1758276553570,
+    "content": "In Boston today, it's sunny with a temperature of 70°F (21°C). There's low precipitation chance (10%), humidity is at 45%, and light winds at 5 mph. Overall, it's a nice day!",
+    "rawContent": "In Boston today, it's sunny with a temperature of 70°F (21°C). There's low precipitation chance (10%), humidity is at 45%, and light winds at 5 mph. Overall, it's a nice day!",
+    "finishReason": "stop",
+    "messageId": "msg_1758276553569_5s1yq5jx"
+  }
+]

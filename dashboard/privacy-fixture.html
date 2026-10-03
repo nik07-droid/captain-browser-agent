@@ -1,0 +1,12 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CAPTAIN Privacy Benchmark Fixture</title>
+<style>
+body{font:18px system-ui;margin:0;background:#f4f4f5;color:#18181b}.wrap{max-width:1000px;margin:24px auto;background:white;padding:28px;border-radius:18px;box-shadow:0 8px 40px #0002}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.private{padding:16px;border:2px solid #ef4444;border-radius:12px}.safe{padding:16px;border:2px solid #22c55e;border-radius:12px}label{display:block;margin:12px 0}input{display:block;width:100%;padding:10px;font:inherit}.face-sample{width:320px;height:230px;background-image:url('/ultraface-test.jpg');background-repeat:no-repeat;background-size:2160px 1440px;background-position:-1050px -230px;border-radius:12px}.tag{font-size:12px;font-weight:800;letter-spacing:.1em}button{padding:12px 18px;font:inherit}
+</style></head><body><main class="wrap">
+<h1>CAPTAIN local visual privacy benchmark</h1><p>This synthetic page contains labeled private and public regions for automated redaction tests.</p>
+<div class="grid"><section class="private"><div class="tag">EXPECTED: REDACT</div>
+<p id="email">Email: <span data-captain-private="EMAIL">mukul.sih@example.com</span></p><p id="phone">Phone: <span data-captain-private="PHONE">+91 9876543210</span></p><p id="pan">PAN: <span data-captain-private="PAN">ABCDE1234F</span></p><p id="address" data-captain-private="PII">Address: 221B Test Road, Delhi</p>
+<label>Password<input id="password" data-captain-private="SECRET" data-captain-ui="password" type="password" value="NeverTransmitThis"></label>
+<label>Account number<input id="account" data-captain-private="SECRET" data-captain-ui="account" value="1234 5678 9012 3456"></label>
+</section><section class="safe"><div class="tag">EXPECTED: KEEP</div><h2 data-captain-safe>Public product information</h2><p data-captain-safe>Laptop price: ₹49,999</p><button data-captain-ui="details" data-captain-safe>View laptop details</button><p data-captain-safe>Public category: Computers</p><h2>Face / raster privacy test</h2><div class="face-sample" data-captain-private="BACKGROUND_IMAGE" role="img" aria-label="Public test image crop used only for local face redaction"></div></section></div>
+</main></body></html>

@@ -1,0 +1,67 @@
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - '**'
+    paths-ignore:
+      - 'multimodal/**'
+  push:
+    branches:
+      - 'main'
+    paths-ignore:
+      - 'multimodal/**'
+
+permissions:
+  id-token: write
+  contents: read
+  attestations: read
+
+name: CI Test, Typecheck
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-test
+  cancel-in-progress: true
+env:
+  CI: true
+  NODE_OPTIONS: --max-old-space-size=8192
+  HUSKY: 0
+
+jobs:
+  test:
+    name: Test & Typecheck
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+
+      - name: Cache turbo
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306  # v5.0.3
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+
+      - name: Install pnpm
+        run: npm install -g pnpm@9
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238  # v6.2.0
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - uses: browser-actions/setup-chrome@v2
+        with:
+          chrome-version: 120
+          install-dependencies: true
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run typecheck
+        run: npm exec turbo run typecheck
+      - name: Run test
+        run: npm exec turbo run coverage
+      - name: Upload coverage data
+        uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de  # v5.5.2
+        with:
+          fail_ci_if_error: true
+          disable_search: true
+          files: ./coverage/lcov.info
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: false

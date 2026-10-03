@@ -1,0 +1,1 @@
+{"website":"httpbin-form","category":"forms","task":"Open https://httpbin.org/forms/post","constraints":{"readOnly":true,"forbid":["submit"]},"startingURL":"about:blank","expectedOutcome":"verified-navigation","verification":{"hosts":["httpbin.org"],"pathPattern":"^/forms/post$"}}

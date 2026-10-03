@@ -1,0 +1,13 @@
+packages:
+  # agent tars
+  - 'agent-tars/*'
+  # gui agent
+  - 'gui-agent/*'
+  # low-level (tarko)
+  - 'tarko/*'
+  # benchmark
+  - 'benchmark/*'
+  # docs
+  - 'websites/*'
+  # omni-tars agent
+  - 'omni-tars/*'

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "3165d8e2-db19-4850-93f7-88eb3304bf46",
+    "type": "user_message",
+    "timestamp": 1758276103049,
+    "content": "How's the weather today?"
+  },
+  {
+    "id": "316eedb5-1520-47d3-8a98-54eced21cd06",
+    "type": "agent_run_start",
+    "timestamp": 1758276103049,
+    "sessionId": "1758276103049-d6o4kd7",
+    "runOptions": {
+      "input": "How's the weather today?"
+    },
+    "provider": "volcengine",
+    "model": "doubao-seed-1-6-vision-250815",
+    "agentName": "Anonymous"
+  },
+  {
+    "id": "c53fd2de-6623-4c46-a835-54dfb78313f4",
+    "type": "assistant_message",
+    "timestamp": 1758276105650,
+    "content": "To determine the weather today, we first need to know the user's current location. So we will call the `getCurrentLocation` tool to obtain the location information.\n",
+    "rawContent": "",
+    "toolCalls": [
+      {
+        "id": "call_bvgy2ky1fmbyqhy1gct18f17",
+        "type": "function",
+        "function": {
+          "name": "getCurrentLocation",
+          "arguments": " {}"
+        }
+      }
+    ],
+    "finishReason": "tool_calls",
+    "messageId": "msg_1758276104350_5ys9743i"
+  },
+  {
+    "id": "fb51abe0-7c44-44d7-a22f-d6bfe768c951",
+    "type": "tool_call",
+    "timestamp": 1758276105652,
+    "toolCallId": "call_bvgy2ky1fmbyqhy1gct18f17",
+    "name": "getCurrentLocation",
+    "arguments": {},
+    "startTime": 1758276105651,
+    "tool": {
+      "name": "getCurrentLocation",
+      "description": "Get user's current location",
+      "schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "id": "a94e5134-eb42-443d-a2bf-fe1ebe7ccbf3",
+    "type": "tool_result",
+    "timestamp": 1758276105656,
+    "toolCallId": "call_bvgy2ky1fmbyqhy1gct18f17",
+    "name": "getCurrentLocation",
+    "content": {
+      "location": "Boston"
+    },
+    "elapsedMs": 0
+  }
+]

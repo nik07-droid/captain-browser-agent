@@ -1,0 +1,19 @@
+{
+  "include": ["src"],
+  "compilerOptions": {
+    "module": "ES2022",
+    "target": "ES2022",
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+    "types": ["node"],
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "noEmit": false,
+    "baseUrl": "."
+  }
+}

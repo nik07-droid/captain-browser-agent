@@ -1,0 +1,48 @@
+{
+  "name": "@agent-tars/core",
+  "version": "0.3.0",
+  "description": "Agent TARS core.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rslib build --watch",
+    "build": "rslib build",
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "agent:snapshot:generate": "npx tsx snapshot/runner.ts generate all",
+    "agent:snapshot:test": "npx vitest snapshot/index.test.ts",
+    "benchmark:crawl": "cd benchmark/crawl && pnpm start"
+  },
+  "dependencies": {
+    "@tarko/shared-utils": "workspace:*",
+    "@tarko/shared-media-utils": "workspace:*",
+    "@tarko/mcp-agent": "workspace:*",
+    "@agent-tars/interface": "workspace:*"
+  },
+  "devDependencies": {
+    "@gui-agent/operator-browser": "workspace:*",
+    "@gui-agent/action-parser": "workspace:*",
+    "@gui-agent/shared": "workspace:*",
+    "@agent-infra/mcp-server-browser": "1.1.10",
+    "@agent-infra/mcp-server-commands": "1.1.10",
+    "@agent-infra/mcp-server-filesystem": "1.1.10",
+    "@agent-infra/search": "0.0.5",
+    "@agent-infra/browser": "0.1.1",
+    "@agent-infra/browser-search": "0.0.5",
+    "@agent-infra/shared": "0.0.2",
+    "@tarko/agent": "workspace:*",
+    "@tarko/agent-snapshot": "workspace:*",
+    "@rslib/core": "0.10.0",
+    "@types/node": "22.15.30",
+    "typescript": "^5.5.3",
+    "vitest": "3.2.4"
+  }
+}

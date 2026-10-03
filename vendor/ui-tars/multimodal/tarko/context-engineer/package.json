@@ -1,0 +1,61 @@
+{
+  "name": "@tarko/context-engineer",
+  "version": "0.3.0",
+  "description": "Context engineering processors, compression tools, etc. for Tarko",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./node": {
+      "types": "./dist/node/index.d.ts",
+      "import": "./dist/node/index.mjs",
+      "require": "./dist/node/index.js"
+    },
+    "./runtime": {
+      "types": "./dist/runtime/index.d.ts",
+      "import": "./dist/runtime/index.mjs",
+      "require": "./dist/runtime/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "node": [
+        "dist/node/index.d.ts"
+      ],
+      "runtime": [
+        "dist/runtime/index.d.ts"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rslib build --watch",
+    "build": "rslib build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@tarko/shared-media-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@tarko/agent-interface": "workspace:*",
+    "repomix": "1.2.1",
+    "vitest": "3.2.4",
+    "@rslib/core": "0.10.0",
+    "@types/js-yaml": "4.0.9",
+    "@types/node": "22.15.30",
+    "typescript": "^5.5.3"
+  }
+}

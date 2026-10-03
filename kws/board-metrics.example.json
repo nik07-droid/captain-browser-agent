@@ -1,0 +1,12 @@
+{
+  "board": "ESP32-S3 or exact tested board",
+  "firmwareCommit": "record the git commit or source hash",
+  "modelSha256": "copy from training-report.json",
+  "peakTotalRamBytes": 0,
+  "idleCpuPercent": 0,
+  "truePositiveRate": 0,
+  "falseActivationsPerHour": 0,
+  "p50KeywordToFirstAudioMs": 0,
+  "p95KeywordToFirstAudioMs": 0,
+  "testNotes": "Replace zero placeholders with measurements. Zero accuracy is a failure."
+}

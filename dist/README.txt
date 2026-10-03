@@ -1,0 +1,1 @@
+Load captain-chrome or captain-firefox as an unpacked extension. Firefox uses DOM clicks because its package omits the Chrome debugger coordinate-click fallback. Store-ready signing, review, and live Firefox validation are separate deployment steps.

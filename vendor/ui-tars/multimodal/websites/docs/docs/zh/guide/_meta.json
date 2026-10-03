@@ -1,0 +1,16 @@
+[
+  {
+    "type": "dir",
+    "name": "get-started",
+    "label": "快速开始",
+    "collapsible": false,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "basic",
+    "label": "基础",
+    "collapsible": false,
+    "collapsed": false
+  }
+]

@@ -1,0 +1,17 @@
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276117,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"role":"assistant"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276117,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"{"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276117,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"\n  \"content"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276117,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"\": \"I"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"'ll check the weather for your"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" current location.\","},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"\n  \"tool"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"Call\": {"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"\n    \"name\":"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":" \"getCurrent"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"Location\",\n    "},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"\"args\": {}"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"\n  }"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{"content":"\n}"},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{},"index":0,"stop_reason":""}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{},"index":0,"finish_reason":"stop","stop_reason":"end_turn"}],"usage":{}}
+{"id":"20250919180156CD2C1384A53FF91DB0EA","created":1758276118,"model":"aws_sdk_claude37_sonnet","choices":[{"delta":{},"index":0,"stop_reason":""}],"usage":{"completion_tokens":47,"prompt_tokens":368,"total_tokens":415}}

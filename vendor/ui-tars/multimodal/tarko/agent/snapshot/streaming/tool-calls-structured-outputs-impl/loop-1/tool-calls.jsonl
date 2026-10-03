@@ -1,0 +1,11 @@
+[
+  {
+    "toolCallId": "call_1758276553603_topph",
+    "name": "getCurrentLocation",
+    "args": {},
+    "result": {
+      "location": "Boston"
+    },
+    "executionTime": 0
+  }
+]

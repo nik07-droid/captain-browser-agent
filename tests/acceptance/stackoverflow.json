@@ -1,0 +1,1 @@
+{"website":"stackoverflow","category":"documentation","task":"Open Stack Overflow","constraints":{"readOnly":true},"startingURL":"about:blank","expectedOutcome":"verified-navigation","verification":{"hosts":["stackoverflow.com"]}}

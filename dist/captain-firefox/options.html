@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="ui.css"></head><body class="options"><main>
+  <p class="eyebrow">CAPTAIN CONTROL PLANE</p><h1>Settings</h1><p>DOM text is filtered locally before planner requests. Detection is heuristic and can miss private information. Screenshot upload is disabled.</p>
+  <label>Agent server URL<input id="serverUrl" type="url"></label>
+  <label>Maximum autonomous steps<input id="maxSteps" type="number" min="1" max="30"></label>
+  <label>Edge ASR WebSocket URL (optional)<input id="edgeAsrUrl" type="url" placeholder="wss://asr.example.org"></label>
+  <label>Edge device / browser client ID<input id="edgeClientId" type="text" placeholder="captain-browser"></label>
+  <label>Edge ASR shared token (stored locally, not synced)<input id="edgeAsrToken" type="password" autocomplete="new-password"></label>
+  <p>When configured, a custom TinyML wake device can deliver its ASR transcript to this controller. Use WSS except for localhost development.</p>
+  <label class="check"><input id="includeScreenshot" type="checkbox"> Send only locally sanitized screenshots to the configured planner</label>
+  <button id="save">Save settings</button><span id="saved"></span>
+  <div class="notice"><b>Safety boundary</b><p>CAPTAIN pauses before purchases, messages, credentials, destructive changes, or accepting legal terms. Page content is untrusted data—not instructions.</p></div>
+</main><script src="options.js"></script></body></html>

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "4a108b2f-07f2-4661-87ed-f106e2f5cef9",
+    "type": "user_message",
+    "timestamp": 1758276109906,
+    "content": "How's the weather today?"
+  },
+  {
+    "id": "022c671a-9195-4fdd-94f1-c4ea532ad280",
+    "type": "agent_run_start",
+    "timestamp": 1758276109906,
+    "sessionId": "1758276109906-77asw10",
+    "runOptions": {
+      "input": "How's the weather today?"
+    },
+    "provider": "volcengine",
+    "model": "doubao-seed-1-6-vision-250815",
+    "agentName": "Anonymous"
+  },
+  {
+    "id": "e55d0ffd-a90c-412c-881f-8c421483dda5",
+    "type": "assistant_message",
+    "timestamp": 1758276111603,
+    "content": "",
+    "rawContent": "<tool_call>\n{\n  \"name\": \"getCurrentLocation\",\n  \"parameters\": {}\n}\n",
+    "toolCalls": [
+      {
+        "id": "call_1758276111185_i3kud1ni9",
+        "type": "function",
+        "function": {
+          "name": "getCurrentLocation",
+          "arguments": "{}"
+        }
+      }
+    ],
+    "finishReason": "tool_calls",
+    "messageId": "msg_1758276110793_2tcf0vvb"
+  },
+  {
+    "id": "4da60ef7-86a3-4e4e-bfb4-2fdf0e10d2b2",
+    "type": "tool_call",
+    "timestamp": 1758276111605,
+    "toolCallId": "call_1758276111185_i3kud1ni9",
+    "name": "getCurrentLocation",
+    "arguments": {},
+    "startTime": 1758276111605,
+    "tool": {
+      "name": "getCurrentLocation",
+      "description": "Get user's current location",
+      "schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "id": "457edc1b-57e7-4633-a60a-5b7707b4b5ce",
+    "type": "tool_result",
+    "timestamp": 1758276111605,
+    "toolCallId": "call_1758276111185_i3kud1ni9",
+    "name": "getCurrentLocation",
+    "content": {
+      "location": "Boston"
+    },
+    "elapsedMs": 0
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "name": "@tarko/llm-client",
+  "version": "0.3.0",
+  "description": "A TypeScript SDK to call multiple LLM Providers in OpenAI format.",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "rslib build --watch",
+    "build": "rslib build",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.24.3",
+    "@google/generative-ai": "0.14.1",
+    "@mistralai/mistralai": "0.5.0",
+    "mime-types": "^2.1.35",
+    "nanoid": "^5.0.7",
+    "openai": "4.93.0"
+  },
+  "devDependencies": {
+    "@rslib/core": "0.10.0",
+    "@types/mime-types": "2.1.4"
+  }
+}

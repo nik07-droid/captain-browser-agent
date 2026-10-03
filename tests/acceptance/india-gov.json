@@ -1,0 +1,1 @@
+{"website":"india-gov","category":"government","task":"Open https://www.india.gov.in","constraints":{"readOnly":true},"startingURL":"about:blank","expectedOutcome":"verified-navigation","verification":{"hosts":["india.gov.in"]}}

@@ -1,0 +1,1 @@
+{"website":"wikipedia","category":"content","task":"Open Wikipedia","constraints":{"readOnly":true},"startingURL":"about:blank","expectedOutcome":"verified-navigation","verification":{"hosts":["wikipedia.org"]}}

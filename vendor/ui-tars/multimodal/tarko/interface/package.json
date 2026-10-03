@@ -1,0 +1,49 @@
+{
+  "name": "@tarko/interface",
+  "version": "0.3.0",
+  "description": "High-level interfaces for Tarko, including Tarko Agent Server and Tarko Agent CLI",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./define-config": {
+      "types": "./dist/define-config.d.ts",
+      "import": "./dist/define-config.mjs",
+      "require": "./dist/define-config.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "define-config": [
+        "dist/define-config/index.d.ts"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rslib build --watch",
+    "build": "rslib build",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@tarko/agio": "workspace:*",
+    "@tarko/agent-interface": "workspace:*"
+  },
+  "devDependencies": {
+    "@rslib/core": "0.10.0",
+    "@types/node": "22.15.30",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.3"
+  }
+}

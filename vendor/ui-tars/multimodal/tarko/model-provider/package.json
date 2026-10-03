@@ -1,0 +1,54 @@
+{
+  "name": "@tarko/model-provider",
+  "version": "0.3.0",
+  "description": "A high-level TypeScript SDK to configure multiple OpenAI-compatible providers and select one to run",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.mjs",
+      "require": "./dist/types.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "types": [
+        "dist/types.d.ts"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rslib build --watch",
+    "build": "rslib build",
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "openai": "4.93.0",
+    "zod": "3.25.36",
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "@types/json-schema": "^7.0.15",
+    "@tarko/llm-client": "workspace:*"
+  },
+  "devDependencies": {
+    "@rslib/core": "0.10.0",
+    "@types/node": "22.15.30",
+    "typescript": "^5.5.3",
+    "vitest": "3.2.4"
+  }
+}

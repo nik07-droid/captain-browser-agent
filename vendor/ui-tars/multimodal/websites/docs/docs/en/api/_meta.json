@@ -1,0 +1,19 @@
+[
+   {
+    "type": "file",
+    "name": "index",
+    "label": "Overview"
+  },
+  {
+    "type": "dir",
+    "name": "config",
+    "label": "Config"
+  },
+  {
+    "type": "dir",
+    "name": "runtime",
+    "label": "Runtime",
+    "collapsible": false,
+    "collapsed": false
+  }
+]

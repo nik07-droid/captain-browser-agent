@@ -1,0 +1,108 @@
+[
+  {
+    "id": "56abe63b-9a0d-4a8a-8e90-94d7d492f653",
+    "type": "user_message",
+    "timestamp": 1758276123698,
+    "content": "How's the weather today?"
+  },
+  {
+    "id": "e0fdf6b4-9d63-463e-9147-16a66e1ca03d",
+    "type": "agent_run_start",
+    "timestamp": 1758276123698,
+    "sessionId": "1758276123698-rsibuiz",
+    "runOptions": {
+      "input": "How's the weather today?",
+      "stream": true
+    },
+    "provider": "azure-openai",
+    "model": "aws_sdk_claude37_sonnet",
+    "agentName": "Anonymous"
+  },
+  {
+    "id": "92f0ff34-7aac-4994-95a1-50fe9b2a66fb",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276125440,
+    "content": "I'll",
+    "isComplete": false,
+    "messageId": "msg_1758276125264_qcoa69co"
+  },
+  {
+    "id": "361433c3-87a3-4036-ab24-092a7ab4a184",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276125498,
+    "content": " check the weather for you",
+    "isComplete": false,
+    "messageId": "msg_1758276125264_qcoa69co"
+  },
+  {
+    "id": "86d1b3bd-a8b1-4bdd-87e2-5670d444c07a",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276125672,
+    "content": ". First, I",
+    "isComplete": false,
+    "messageId": "msg_1758276125264_qcoa69co"
+  },
+  {
+    "id": "19eeba44-07d3-403f-8130-bc51e27033af",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276125672,
+    "content": " need to get your current",
+    "isComplete": false,
+    "messageId": "msg_1758276125264_qcoa69co"
+  },
+  {
+    "id": "977d5cca-b6ac-428f-9539-c46e73c45a6e",
+    "type": "assistant_streaming_message",
+    "timestamp": 1758276125788,
+    "content": " location.",
+    "isComplete": false,
+    "messageId": "msg_1758276125264_qcoa69co"
+  },
+  {
+    "id": "05cb143c-33e8-47fb-b749-82d2010ca8a7",
+    "type": "assistant_message",
+    "timestamp": 1758276126581,
+    "content": "I'll check the weather for you. First, I need to get your current location.",
+    "rawContent": "I'll check the weather for you. First, I need to get your current location.",
+    "toolCalls": [
+      {
+        "id": "call_1758276126581_a5kis",
+        "type": "function",
+        "function": {
+          "name": "getCurrentLocation",
+          "arguments": "{}"
+        }
+      }
+    ],
+    "finishReason": "tool_calls",
+    "messageId": "msg_1758276125264_qcoa69co"
+  },
+  {
+    "id": "b7c03f77-c10f-4054-ad5c-32bb9d703c07",
+    "type": "tool_call",
+    "timestamp": 1758276126582,
+    "toolCallId": "call_1758276126581_a5kis",
+    "name": "getCurrentLocation",
+    "arguments": {},
+    "startTime": 1758276126582,
+    "tool": {
+      "name": "getCurrentLocation",
+      "description": "Get user's current location",
+      "schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "id": "21f6ea66-8798-40c8-b9ed-c8b8baff2ddd",
+    "type": "tool_result",
+    "timestamp": 1758276126583,
+    "toolCallId": "call_1758276126581_a5kis",
+    "name": "getCurrentLocation",
+    "content": {
+      "location": "Boston"
+    },
+    "elapsedMs": 0
+  }
+]

@@ -1,0 +1,418 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DirectoryExpander 1`] = `
+"<directory path="src">
+  <file path="index.test.ts">
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    /*
+     * Copyright (c) 2025 Bytedance, Inc. and its affiliates.
+     * SPDX-License-Identifier: Apache-2.0
+     */
+    
+    import { beforeEach, afterEach, describe, expect, it, vi } from 'vitest';
+    import { loadConfig } from './index';
+    
+    // Mock the console to avoid noise in test output
+    vi.spyOn(console, 'debug').mockImplementation(() => {});
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
+    
+    // Mock fs module
+    vi.mock('node:fs', () => {
+      const mockExistsSync = vi.fn();
+      const mockReadFile = vi.fn();
+    
+      return {
+        default: {
+          existsSync: mockExistsSync,
+          promises: {
+            readFile: mockReadFile,
+          },
+        },
+        existsSync: mockExistsSync,
+        promises: {
+          readFile: mockReadFile,
+        },
+      };
+    });
+    
+    // Mock path module
+    vi.mock('node:path', () => {
+      const mockJoin = vi.fn((root, file) => \`\${root}/\${file}\`);
+      const mockIsAbsolute = vi.fn((p) => p.startsWith('/'));
+    
+      return {
+        default: {
+          join: mockJoin,
+          isAbsolute: mockIsAbsolute,
+        },
+        join: mockJoin,
+        isAbsolute: mockIsAbsolute,
+      };
+    });
+    
+    // Mock jiti
+    vi.mock('jiti', () => ({
+      createJiti: vi.fn(() => ({
+        import: vi.fn(),
+      })),
+    }));
+    
+    // Mock js-yaml
+    vi.mock('js-yaml', () => ({
+      default: {
+        load: vi.fn(),
+      },
+    }));
+    
+    // Mock dynamic imports
+    vi.mock('node:url', () => ({
+      pathToFileURL: vi.fn((path) => ({ href: \`file://\${path}\` })),
+    }));
+    
+    describe('loadConfig', async () => {
+      const mockCwd = '/mock/cwd';
+      const fs = await import('node:fs');
+      const path = await import('node:path');
+      const { createJiti } = await import('jiti');
+      const yaml = await import('js-yaml');
+    
+      beforeEach(() => {
+        vi.resetAllMocks();
+      });
+    
+      afterEach(() => {
+        vi.resetModules();
+      });
+    
+      it('returns empty object when no config file is found', async () => {
+        vi.mocked(fs.existsSync).mockReturnValue(false);
+    
+        const result = await loadConfig({
+          cwd: mockCwd,
+          configFiles: ['config.ts'],
+        });
+    
+        expect(result).toEqual({
+          content: {},
+          filePath: null,
+        });
+      });
+    
+      it('loads JSON config file correctly', async () => {
+        const mockConfigPath = \`\${mockCwd}/config.json\`;
+        const mockConfig = { key: 'value' };
+    
+        vi.mocked(fs.existsSync).mockImplementation((path) => path === mockConfigPath);
+        vi.mocked(fs.promises.readFile).mockResolvedValue(JSON.stringify(mockConfig));
+    
+        const result = await loadConfig({
+          cwd: mockCwd,
+          configFiles: ['config.json'],
+        });
+    
+        expect(result.filePath).toBe(mockConfigPath);
+        expect(result.content).toEqual(mockConfig);
+      });
+    
+      it('loads YAML config file correctly', async () => {
+        const mockConfigPath = \`\${mockCwd}/config.yml\`;
+        const mockConfig = { key: 'value' };
+    
+        vi.mocked(fs.existsSync).mockImplementation((path) => path === mockConfigPath);
+        vi.mocked(fs.promises.readFile).mockResolvedValue('key: value');
+        vi.mocked(yaml.default.load).mockReturnValue(mockConfig);
+    
+        const result = await loadConfig({
+          cwd: mockCwd,
+          configFiles: ['config.yml'],
+        });
+    
+        expect(result.filePath).toBe(mockConfigPath);
+        expect(result.content).toEqual(mockConfig);
+      });
+    
+      it('should support custom config path', async () => {
+        const customPath = 'custom/path/config.js';
+        const absolutePath = \`\${mockCwd}/\${customPath}\`;
+    
+        vi.mocked(path.isAbsolute).mockReturnValue(false);
+        vi.mocked(path.join).mockReturnValue(absolutePath);
+        vi.mocked(fs.existsSync).mockImplementation((p) => p === absolutePath);
+    
+        // Mock jiti to return a config object
+        const mockConfig = { key: 'custom' };
+        const mockJitiImport = vi.fn().mockResolvedValue(mockConfig);
+        vi.mocked(createJiti).mockReturnValue({
+          import: mockJitiImport,
+        } as any);
+    
+        const result = await loadConfig({
+          cwd: mockCwd,
+          path: customPath,
+        });
+    
+        expect(result.filePath).toBe(absolutePath);
+        expect(result.content).toEqual(mockConfig);
+      });
+    
+      it('handles function exports with environment info', async () => {
+        const mockConfigPath = \`\${mockCwd}/config.ts\`;
+        const mockConfigFn = vi.fn(({ env }) => ({ mode: env }));
+    
+        vi.mocked(fs.existsSync).mockImplementation((path) => path === mockConfigPath);
+    
+        // Mock jiti to return a function
+        vi.mocked(createJiti).mockReturnValue({
+          import: vi.fn().mockResolvedValue(mockConfigFn),
+        } as any);
+    
+        // Set environment
+        const originalNodeEnv = process.env.NODE_ENV;
+        process.env.NODE_ENV = 'test';
+    
+        const result = await loadConfig({
+          cwd: mockCwd,
+          configFiles: ['config.ts'],
+        });
+    
+        expect(mockConfigFn).toHaveBeenCalledWith({
+          env: 'test',
+          envMode: 'test',
+          meta: {},
+        });
+        expect(result.content.mode).toBe('test');
+    
+        // Restore environment
+        process.env.NODE_ENV = originalNodeEnv;
+      });
+    
+      it('supports generic type parameters', async () => {
+        interface TestConfig {
+          port: number;
+          debug: boolean;
+        }
+    
+        const mockConfigPath = \`\${mockCwd}/config.json\`;
+        const mockConfig: TestConfig = { port: 3000, debug: true };
+    
+        vi.mocked(fs.existsSync).mockImplementation((path) => path === mockConfigPath);
+        vi.mocked(fs.promises.readFile).mockResolvedValue(JSON.stringify(mockConfig));
+    
+        const result = await loadConfig<TestConfig>({
+          cwd: mockCwd,
+          configFiles: ['config.json'],
+        });
+    
+        // TypeScript should recognize result.content as TestConfig
+        expect(result.content.port).toBe(3000);
+        expect(result.content.debug).toBe(true);
+      });
+    });
+    
+  </file>
+  <file path="index.ts">
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    /*
+     * Copyright (c) 2025 Bytedance, Inc. and its affiliates.
+     * SPDX-License-Identifier: Apache-2.0
+     */
+    import fs from 'node:fs';
+    import path from 'node:path';
+    import { pathToFileURL } from 'node:url';
+    
+    /**
+     * Checks if a value is a plain object (not an array, function, or other object type)
+     */
+    export const isObject = (obj: unknown): obj is Record<string, any> => {
+      return obj !== null && typeof obj === 'object' && Object.getPrototypeOf(obj) === Object.prototype;
+    };
+    
+    export type ConfigLoader = 'jiti' | 'native';
+    
+    export type LoadConfigOptions = {
+      /**
+       * The root path to resolve the config file.
+       * @default process.cwd()
+       */
+      cwd?: string;
+      /**
+       * The path to the config file, can be a relative or absolute path.
+       * If not provided, the function will search for the config file in the \`cwd\`.
+       */
+      path?: string;
+      /**
+       * A custom meta object to be passed into the config function.
+       */
+      meta?: Record<string, unknown>;
+      /**
+       * The environment mode to be passed into the config function.
+       * @default process.env.NODE_ENV
+       */
+      envMode?: string;
+      /**
+       * Specify the config loader, can be \`jiti\` or \`native\`.
+       * - 'jiti': Use \`jiti\` as loader, which supports TypeScript and ESM out of the box
+       * - 'native': Use native Node.js loader, requires TypeScript support in Node.js >= 22.6
+       * @default 'jiti'
+       */
+      loader?: ConfigLoader;
+      /**
+       * The list of config file names to search for.
+       * For example: ['app.config.ts', 'app.config.js']
+       * @default []
+       */
+      configFiles?: string[];
+    };
+    
+    export type LoadConfigResult<T extends Record<string, any> = Record<string, any>> = {
+      /**
+       * The loaded configuration object with specified type.
+       */
+      content: T;
+      /**
+       * The path to the loaded configuration file.
+       * Return \`null\` if the configuration file is not found.
+       */
+      filePath: string | null;
+    };
+    
+    /**
+     * Resolves the path to the config file.
+     */
+    export const resolveConfigPath = (root: string, configFiles: string[], customConfig?: string) => {
+      if (customConfig) {
+        const customConfigPath = path.isAbsolute(customConfig)
+          ? customConfig
+          : path.join(root, customConfig);
+        if (fs.existsSync(customConfigPath)) {
+          return customConfigPath;
+        }
+      }
+    
+      if (configFiles.length === 0) {
+        return null;
+      }
+    
+      for (const file of configFiles) {
+        const configFile = path.join(root, file);
+        if (fs.existsSync(configFile)) {
+          return configFile;
+        }
+      }
+    
+      return null;
+    };
+    
+    /**
+     * Loads configuration from a file with generic type support.
+     */
+    export async function loadConfig<T extends Record<string, any> = Record<string, any>>({
+      cwd = process.cwd(),
+      path: configPath,
+      meta = {},
+      envMode,
+      loader = 'jiti',
+      configFiles = [],
+    }: LoadConfigOptions = {}): Promise<LoadConfigResult<T>> {
+      const configFilePath = resolveConfigPath(cwd, configFiles, configPath);
+    
+      if (!configFilePath) {
+        return {
+          content: {} as T,
+          filePath: configFilePath,
+        };
+      }
+    
+      let configExport: any;
+    
+      // Handle JSON files
+      if (/\\.json$/.test(configFilePath)) {
+        try {
+          const content = await fs.promises.readFile(configFilePath, 'utf-8');
+          configExport = JSON.parse(content);
+        } catch (err) {
+          console.error(\`Failed to load JSON file: \${configFilePath}\`);
+          throw err;
+        }
+      }
+      // Handle YAML files
+      else if (/\\.ya?ml$/.test(configFilePath)) {
+        try {
+          const { default: yaml } = await import('js-yaml');
+          const content = await fs.promises.readFile(configFilePath, 'utf-8');
+          configExport = yaml.load(content);
+        } catch (err) {
+          console.error(\`Failed to load YAML file: \${configFilePath}\`);
+          throw err;
+        }
+      }
+      // Handle JavaScript files or when using native loader
+      else if (loader === 'native' || /\\.(?:js|mjs|cjs)$/.test(configFilePath)) {
+        try {
+          const configFileURL = pathToFileURL(configFilePath).href;
+          const exportModule = await import(\`\${configFileURL}?t=\${Date.now()}\`);
+          configExport = exportModule.default ? exportModule.default : exportModule;
+        } catch (err) {
+          if (loader === 'native') {
+            console.error(\`Failed to load file with native loader: \${configFilePath}\`);
+            throw err;
+          }
+          console.debug(\`Failed to load file with dynamic import: \${configFilePath}\`);
+        }
+      }
+    
+      // Handle TypeScript files with jiti
+      try {
+        if (configExport === undefined) {
+          const { createJiti } = await import('jiti');
+          const jiti = createJiti(__filename, {
+            // disable require cache to support restart and read the new config
+            moduleCache: false,
+            interopDefault: true,
+          });
+    
+          configExport = await jiti.import(configFilePath, {
+            default: true,
+          });
+        }
+      } catch (err) {
+        console.error(\`Failed to load file with jiti: \${configFilePath}\`);
+        throw err;
+      }
+    
+      // Handle function export
+      if (typeof configExport === 'function') {
+        const nodeEnv = process.env.NODE_ENV || 'development';
+        const configParams = {
+          env: nodeEnv,
+          envMode: envMode || nodeEnv,
+          meta,
+        };
+    
+        const result = await configExport(configParams);
+    
+        if (result === undefined) {
+          throw new Error('[loadConfig] The config function must return a config object.');
+        }
+    
+        return {
+          content: result as T,
+          filePath: configFilePath,
+        };
+      }
+    
+      if (!isObject(configExport)) {
+        throw new Error(
+          \`[loadConfig] The config must be an object or a function that returns an object, got \${configExport}\`,
+        );
+      }
+    
+      return {
+        content: configExport as T,
+        filePath: configFilePath,
+      };
+    }
+    
+  </file>
+</directory>"
+`;

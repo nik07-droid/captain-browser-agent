@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CAPTAIN Evaluation Dashboard</title>
+    <link rel="stylesheet" href="dashboard/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="brand"><span>C</span> CAPTAIN</div>
+      <div id="health">Checking local agent…</div>
+    </nav>
+    <main>
+      <section class="hero compact">
+        <p class="eyebrow">MEASURED · PRIVACY-FIRST BROWSER AGENT</p>
+        <h1>Evidence, not<br /><em>demo claims.</em></h1>
+        <p>
+          Every score below is loaded from the latest installed-extension audit.
+          Raw screenshots are withheld locally; only the sanitized artifact is
+          available here.
+        </p>
+        <div class="buttons">
+          <a href="demo.html">Open judge store</a
+          ><a class="secondary" href="benchmark.html">Open labeled screens</a>
+        </div>
+      </section>
+      <section class="flow">
+        <article>🎙️<b>Voice</b><span>Wake and command</span></article>
+        <i>→</i>
+        <article>
+          👀<b>Local perception</b><span>DOM + visual geometry</span>
+        </article>
+        <i>→</i>
+        <article class="shield">
+          🔐<b>Privacy shield</b><span>Mask before upload</span>
+        </article>
+        <i>→</i>
+        <article>☁️<b>Planner</b><span>Sanitized context only</span></article>
+        <i>→</i>
+        <article>
+          🖱️<b>Verified action</b><span>Observe, act, confirm</span>
+        </article>
+      </section>
+      <section class="grid stats">
+        <div class="panel">
+          <p>LABELED SCREENS</p>
+          <strong id="screens">—</strong
+          ><span id="screen-detail">waiting for audit</span>
+        </div>
+        <div class="panel">
+          <p>TASK COMPLETION</p>
+          <strong id="completion">—</strong><span>live shopping workflow</span>
+        </div>
+        <div class="panel">
+          <p>P95 OBSERVATION</p>
+          <strong id="latency">—</strong
+          ><span>navigation + local observation</span>
+        </div>
+      </section>
+      <section class="panel wide disclosure">
+        <div>
+          <p>LOCAL PERCEPTION STATUS</p>
+          <h2>DOM + geometry + local face detection</h2>
+        </div>
+        <div class="status-stack">
+          <span class="partial">OCR: NOT CONFIGURED</span
+          ><span
+            >Pixel text is conservatively withheld; OCR-derived PII is not
+            claimed.</span
+          >
+        </div>
+      </section>
+      <section class="panel wide">
+        <div class="section-head">
+          <div>
+            <p>SIH EVALUATION EVIDENCE</p>
+            <h2>Latest measured results</h2>
+          </div>
+          <span id="generated">No benchmark loaded</span>
+        </div>
+        <div class="bars" id="score-bars"></div>
+        <p class="caveat">
+          The percentages are measured on CAPTAIN’s labeled synthetic benchmark,
+          not a claim of general web accuracy. Resource figures are explicitly
+          labeled when they are whole-browser upper bounds.
+        </p>
+      </section>
+      <section class="panel wide">
+        <div class="section-head">
+          <div>
+            <p>REAL AMAZON LATENCY</p>
+            <h2>Measured end-to-end waterfall</h2>
+          </div>
+          <span id="amazon-latency-state">No latency benchmark loaded</span>
+        </div>
+        <div id="amazon-latency"></div>
+      </section>
+      <section class="compare">
+        <article class="panel">
+          <p>RAW CAPTURE</p>
+          <div class="withheld">
+            <b>WITHHELD LOCALLY</b
+            ><span
+              >Never persisted · never served · never sent to the planner</span
+            >
+          </div>
+        </article>
+        <article class="panel">
+          <p>SANITIZED CAPTURE</p>
+          <img
+            src="/api/benchmark/sanitized-image"
+            alt="Locally redacted benchmark screenshot"
+          /><span>Persisted audit artifact after local masking</span>
+        </article>
+      </section>
+      <section class="panel wide">
+        <div class="section-head">
+          <div>
+            <p>CASE-BY-CASE AUDIT</p>
+            <h2>Detected regions and failures</h2>
+          </div>
+          <button id="refresh">Refresh evidence</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Screen</th>
+                <th>Visual</th>
+                <th>Private regions</th>
+                <th>Leak</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody id="cases">
+              <tr>
+                <td colspan="5">Loading…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel wide">
+        <div class="section-head">
+          <div>
+            <p>REAL-WORLD ACCEPTANCE</p>
+            <h2>Current website outcomes</h2>
+          </div>
+          <div class="filters">
+            <select id="site-category">
+              <option value="">All categories</option></select
+            ><select id="site-status">
+              <option value="">All outcomes</option>
+              <option value="verified">Verified</option>
+              <option value="partial">Partial</option>
+              <option value="blocked">Blocked</option>
+              <option value="failed">Failed</option>
+            </select>
+          </div>
+        </div>
+        <p class="caveat" id="acceptance-summary">No real-site audit loaded.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Website</th>
+                <th>Category</th>
+                <th>Steps</th>
+                <th>Latency</th>
+                <th>Privacy</th>
+                <th>Outcome</th>
+              </tr>
+            </thead>
+            <tbody id="acceptance">
+              <tr>
+                <td colspan="6">Loading…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel wide">
+        <div class="section-head">
+          <div>
+            <p>HUMAN HANDOFF</p>
+            <h2>Challenge-safe pause and resume</h2>
+          </div>
+          <span id="handoff-state">No audit loaded</span>
+        </div>
+        <div id="handoff" class="resource-grid"></div>
+        <p class="caveat">
+          CAPTAIN detects a challenge and pauses. It never attempts to solve or
+          bypass CAPTCHA.
+        </p>
+      </section>
+      <section class="panel wide">
+        <p>RESOURCE DISCLOSURE</p>
+        <div id="resources" class="resource-grid"></div>
+      </section>
+    </main>
+    <footer>
+      CAPTAIN · On-device Visual Perception for Lightweight Browser Agents ·
+      benchmark version <span id="version">—</span>
+    </footer>
+    <script src="dashboard/app.js"></script>
+  </body>
+</html>

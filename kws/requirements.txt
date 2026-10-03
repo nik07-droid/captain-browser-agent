@@ -1,0 +1,6 @@
+# Training/capture dependencies. All are open-source; no proprietary wake SDK.
+tensorflow-cpu>=2.16,<2.19
+numpy>=1.26,<3
+sounddevice>=0.5,<1
+websockets>=13,<16
+faster-whisper>=1.1,<2

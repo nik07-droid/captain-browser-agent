@@ -1,0 +1,1 @@
+{"website":"flipkart","category":"ecommerce","task":"Open Flipkart","constraints":{"readOnly":true,"forbid":["login","cart","checkout","purchase"]},"startingURL":"about:blank","expectedOutcome":"verified-navigation","verification":{"hosts":["flipkart.com"]}}
